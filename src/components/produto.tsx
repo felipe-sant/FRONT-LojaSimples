@@ -46,7 +46,7 @@ export default function ProdutoComponent(props: { produto: Produto }) {
             <div className={css.produto}>
                 <div>
                     <h2>{produto.nome}</h2>
-                    <p>Preço: {produto.preco}</p>
+                    <p>R$ {produto.preco.toFixed(2)}</p>
                     {produto.quantidade && <p>Quantidade: {produto.quantidade}</p>}
                 </div>
                 <button className={verificar() ? css.adicionado : css.remover} onClick={interagir}>

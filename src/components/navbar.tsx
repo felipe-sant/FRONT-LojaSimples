@@ -14,6 +14,9 @@ export default function Navbar() {
                     <li>
                         <a href="/cadastrar">Cadastrar Produto</a>
                     </li>
+                    <li>
+                        <a href="/historico">Histórico de Compras</a>
+                    </li>
                 </ul>
             </nav>
         </>

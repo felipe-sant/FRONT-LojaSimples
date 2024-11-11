@@ -1,22 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Navbar from "../components/navbar"
 import Produto from "../models/produto"
 import css from "../styles/home.module.css"
 import ProdutoComponent from "../components/produto"
+import get from "../functions/get"
 
 function Home() {
-    const [produtos, setProdutos] = useState<Produto[]>([
-        { nome: "Produto 1", preco: 100 },
-        { nome: "Produto 2", preco: 200 },
-        { nome: "Produto 3", preco: 300 },
-        { nome: "Produto 4", preco: 400 },
-        { nome: "Produto 5", preco: 500 }
-    ])
+    const [produtos, setProdutos] = useState<Produto[]>([])
 
     const limparCarrinho = () => {
         localStorage.removeItem("carrinho")
         window.location.reload()
     }
+
+    const getProdutos = async () => {
+        const produtos: Produto[] = await get("http://localhost:3001/produtos")
+        setProdutos(produtos)
+    }
+
+    useEffect(() => {
+        getProdutos()
+    }, [])
 
     return (
         <>
