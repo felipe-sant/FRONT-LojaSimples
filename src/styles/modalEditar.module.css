@@ -1,0 +1,75 @@
+.background {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    background-color: white;
+    width: 400px;
+    height: 450px;
+    z-index: 9999;
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 225px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    height: 15%;
+}
+
+.header p {
+    color: #ddd;
+    font-size: 12px;
+}
+
+.body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.body .input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input input {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.input .numero {
+    width: 80px;
+}
+
+.body button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: greenyellow;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.body button.delete {
+    background-color: salmon;
+    right: auto;
+    left: 30px;
+}

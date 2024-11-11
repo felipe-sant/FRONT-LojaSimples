@@ -27,7 +27,6 @@ function Home() {
             <Navbar />
             <main className={css.main}>
                 <h1>Produtos</h1> 
-                <button onClick={limparCarrinho}>LIMPAR</button>
                 <div className={css.produtos}>
                     {produtos.map((produto, i) => {
                         return (

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Produto from "../models/produto";
 import css from "../styles/produto.module.css"
 import carrinho_imagem from "../images/shopping-cart.svg"
+import ModalEditar from "./modal";
 
 export default function ProdutoComponent(props: { produto: Produto }) {
     const { produto } = props
@@ -41,6 +42,11 @@ export default function ProdutoComponent(props: { produto: Produto }) {
         }
     }
 
+    const [open, setOpen] = useState<boolean>(false)
+
+    const onClose = () => setOpen(false)
+    const onOpen = () => setOpen(true)
+
     return (
         <>
             <div className={css.produto}>
@@ -48,12 +54,14 @@ export default function ProdutoComponent(props: { produto: Produto }) {
                     <h2>{produto.nome}</h2>
                     <p>R$ {produto.preco.toFixed(2)}</p>
                     {produto.quantidade && <p>Quantidade: {produto.quantidade}</p>}
+                    <button onClick={onOpen} className={css.editar}>EDITAR</button>
                 </div>
                 <button className={verificar() ? css.adicionado : css.remover} onClick={interagir}>
                     <img src={carrinho_imagem} alt="" />
                 </button>
             </div>
             <hr />
+            {open ? <ModalEditar onClose={onClose} produto={produto} /> : null}
         </>
     )
 }
