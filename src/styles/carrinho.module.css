@@ -1,0 +1,70 @@
+.main {
+    max-width: 700px;
+    min-width: none;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.carrinho {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.carrinho>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.produto {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    justify-content: space-between;
+}
+
+.produto .botao {
+    display: flex;
+    align-items: center;
+}
+
+.produto .botao button {
+    padding: 3px 5px;
+}
+
+.comprar {
+    min-height: 500px;
+    max-height: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.comprar button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 3px 5px;
+}
+
+.comprar .texto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

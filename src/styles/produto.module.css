@@ -1,0 +1,30 @@
+.produto {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produto button {
+    height: 32px;
+    width: 32px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eee;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.produto button img {
+    width: 100%;
+    height: 100%;
+}
+
+.adicionado {
+    background-color: greenyellow !important;
+}
+
+.removido {
+    background-color: red !important;
+}
