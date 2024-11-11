@@ -3,14 +3,15 @@ import Navbar from "../components/navbar";
 import Compra from "../models/compra";
 import css from "../styles/historico.module.css"
 import get from "../functions/get";
+import inverterLista from "../utils/inverterLista";
 
 export default function Historico() {
     const [compra, setCompra] = useState<Compra[]>([])
 
     const getCompra = async () => {
         const compra: Compra[] = await get("http://localhost:3001/compra")
-        setCompra(compra)
-    }
+        setCompra(inverterLista(compra))
+    }    
 
     useEffect(() => {
         getCompra()
